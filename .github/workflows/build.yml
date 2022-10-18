@@ -201,8 +201,7 @@ jobs:
     steps:
       - name: 👀 Determine version
         run: |
-          OCTOPRINT_VERSION=$(echo $GITHUB_REF | cut -d/ -f3)
-          echo "OCTOPRINT_VERSION=$OCTOPRINT_VERSION" >> $GITHUB_ENV
+          echo "OCTOPRINT_VERSION=$GITHUB_REF_NAME" >> $GITHUB_ENV
       - name: 🚀 Repository Dispatch
         uses: peter-evans/repository-dispatch@v1
         with:
